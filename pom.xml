@@ -9,21 +9,25 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<springbootstaters>2.3.3.RELEASE</springbootstaters>
+		<springbootstaters.version>2.3.3.RELEASE</springbootstaters.version>
+		<mybatis.version>3.5.5</mybatis.version>
+		<mysqlconnector.version>8.0.21</mysqlconnector.version>
+		<junit.version>3.8.1</junit.version>
+		<lombok.version>1.18.6</lombok.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.21</version>
+			<version>${mysqlconnector.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-dependencies -->
 		<dependency>
@@ -37,9 +41,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${springbootstaters}</version>
+			<version>${springbootstaters.version}</version>
 		</dependency>
-
+		<!-- Mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -49,7 +65,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${springbootstaters}</version>
+				<version>${springbootstaters.version}</version>
 			</plugin>
 		</plugins>
 	</build>
