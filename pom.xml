@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<springbootstaters.version>2.3.3.RELEASE</springbootstaters.version>
+		<springbootstarters.version>2.3.3.RELEASE</springbootstarters.version>
 		<mybatis.version>3.5.5</mybatis.version>
 		<mysqlconnector.version>8.0.21</mysqlconnector.version>
 		<junit.version>3.8.1</junit.version>
@@ -41,13 +41,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${springbootstaters.version}</version>
+			<version>${springbootstarters.version}</version>
 		</dependency>
 		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>${mybatis.version}</version>
+		</dependency>
+		<!-- springboot mybatis starter -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${springbootstarters.version}</version>
 		</dependency>
 		<!-- lombok -->
 		<dependency>

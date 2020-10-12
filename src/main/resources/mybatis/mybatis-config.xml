@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置MyBatis运⾏行行环境 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 配置JDBC事务管理理 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- POOLED配置JDBC数据源连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver">
+				</property>
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/bwrlearn?
+useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;useSSL=false"></property>
+				<property name="username" value="bwr"></property>
+				<property name="password" value="971219"></property>
+			</dataSource>
+		</environment>
+	</environments>
+</configuration>
