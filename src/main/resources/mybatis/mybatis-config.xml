@@ -2,21 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<!-- 配置MyBatis运⾏行行环境 -->
-	<environments default="development">
-		<environment id="development">
-			<!-- 配置JDBC事务管理理 -->
-			<transactionManager type="JDBC"></transactionManager>
-			<!-- POOLED配置JDBC数据源连接池 -->
-			<dataSource type="POOLED">
-				<property name="driver" value="com.mysql.cj.jdbc.Driver">
-				</property>
-				<property name="url"
-					value="jdbc:mysql://localhost:3306/bwrlearn?
-useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;useSSL=false"></property>
-				<property name="username" value="bwr"></property>
-				<property name="password" value="971219"></property>
-			</dataSource>
-		</environment>
-	</environments>
+    <typeAliases>
+        <typeAlias alias="Integer" type="java.lang.Integer" />
+        <typeAlias alias="Long" type="java.lang.Long" />
+        <typeAlias alias="HashMap" type="java.util.HashMap" />
+        <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+        <typeAlias alias="ArrayList" type="java.util.ArrayList" />
+        <typeAlias alias="LinkedList" type="java.util.LinkedList" />
+    </typeAliases>
 </configuration>

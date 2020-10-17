@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>indi.bwr.demo</groupId>
 	<artifactId>blog</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>blog Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<springbootstarters.version>2.3.3.RELEASE</springbootstarters.version>
+		<springbootstarters.version>2.3.4.RELEASE</springbootstarters.version>
+		<mybatisspringbootstarter.version>2.1.1</mybatisspringbootstarter.version>
 		<mybatis.version>3.5.5</mybatis.version>
 		<mysqlconnector.version>8.0.21</mysqlconnector.version>
 		<junit.version>3.8.1</junit.version>
@@ -17,6 +17,24 @@
 	</properties>
 
 	<dependencies>
+	
+		<!-- 非继承方式导入Boot的根配置 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-dependencies -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-boot-dependencies</artifactId>
+			<version>${springbootstarters.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+	
+		<!-- springboot jdbc启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<version>${springbootstarters.version}</version>
+		</dependency>
+	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -28,15 +46,28 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysqlconnector.version}</version>
+			<scope>runtime</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-dependencies -->
+		
+		<!-- SpringBootStarters -->
 		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-spring-boot-dependencies</artifactId>
-			<version>3.0.0-RC3</version>
-			<type>pom</type>
-			<scope>provided</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${springbootstarters.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${springbootstarters.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				 <exclusion>
+          			<groupId>org.junit.vintage</groupId>
+          			<artifactId>junit-vintage-engine</artifactId>
+        		</exclusion>
+			</exclusions>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,16 +75,16 @@
 			<version>${springbootstarters.version}</version>
 		</dependency>
 		<!-- Mybatis -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>${mybatis.version}</version>
-		</dependency>
+		</dependency> -->
 		<!-- springboot mybatis starter -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${springbootstarters.version}</version>
+			<version>${mybatisspringbootstarter.version}</version>
 		</dependency>
 		<!-- lombok -->
 		<dependency>
@@ -62,7 +93,13 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${springbootstarters.version}</version>
+			<optional>true</optional>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>blog</finalName>
@@ -71,7 +108,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${springbootstaters.version}</version>
+				<version>${springbootstarters.version}</version>
 			</plugin>
 		</plugins>
 	</build>

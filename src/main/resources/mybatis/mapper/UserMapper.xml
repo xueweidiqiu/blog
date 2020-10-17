@@ -14,7 +14,7 @@
 		delete from t_account where id = #{id}
 	</delete>
 	<select id="findAll" resultType="indi.bwr.demo.blog.entity.User">
-		select * from t_account
+		select * from user
 	</select>
 	<select id="findById" parameterType="long"
 		resultType="indi.bwr.demo.blog.entity.User">

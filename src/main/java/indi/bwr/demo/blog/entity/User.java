@@ -25,6 +25,12 @@ public class User {
 	private Time registerTime;
 	private boolean isDelete;
 	
+	private enum Sex {
+		保密,男,女
+	}
+	
+	//键值对版本
+	/*
 	public enum Sex {
 		SECRET(0L,"保密"),
 		MALE(1L,"男"),
@@ -48,8 +54,24 @@ public class User {
 		
 		
 	}
-	
-	public static void main(String[] args) {
-		System.out.println(Long.toString(Sex.MALE.getKey()) + "---" + Sex.MALE.getValue());
+	*/
+	//值版本
+	/*
+	public enum Sex {
+		SECRET("保密"),
+		MALE("男"),
+		FEMALE("女");
+		
+		private final String value;
+		
+		Sex(String value) {
+			this.value = value;
+		}
+
+		public String getValue() {
+			return value;
+		}
+		 	
 	}
+	*/
 }
