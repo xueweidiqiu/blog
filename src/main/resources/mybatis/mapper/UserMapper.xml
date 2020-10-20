@@ -1,23 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="indi.bwr.demo.blog.dao.UserDao">
 	<insert id="save" parameterType="indi.bwr.demo.blog.entity.User">
-		insert into t_account(username,password,age) values(#{username},#
-		{password},#{age})
+		insert into user 
+		(id,uid,account,password,name,email,sex,birthday,avatarLocation,personalLocation,registerTime,isDelete) 
+		values 
+		(#{id},#{uid},#{account},#{password},#{name},#{email},#{sex},#{birthday},#{avatarLocation},#{ersonalLocation},#{registerTime},#{isDelete}) 
 	</insert>
 	<update id="update" parameterType="indi.bwr.demo.blog.entity.User">
-		update t_account set username = #{username},password = #{password},age
-		= #{age} where id = #{id}
+		update user set 
+			id = #{id},
+			uid = #{uid},
+			account = #{account},
+			password = #{password},
+			name = #{name},
+			email = #{email},
+			sex = #{sex},
+			birthday = #{birthday},
+			avatarLocation = #{avatarLocation},
+			personalLocation = #{personalLocation},
+			registerTime = #{registerTime},
+			isDelete = #{isDelete} 
+		where id = #{id}
 	</update>
 	<delete id="deleteById" parameterType="long">
-		delete from t_account where id = #{id}
+		delete from user where id = #{id}
 	</delete>
 	<select id="findAll" resultType="indi.bwr.demo.blog.entity.User">
 		select * from user
 	</select>
 	<select id="findById" parameterType="long"
 		resultType="indi.bwr.demo.blog.entity.User">
-		select * from t_account where id = #{id}
+		select * from user where id = #{id}
 	</select>
 </mapper>
