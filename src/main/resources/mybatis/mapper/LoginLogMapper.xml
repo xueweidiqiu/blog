@@ -6,7 +6,7 @@
 		insert into login_log(id,user_id,last_IP,last_login_time) values(#{id},#{userId},#{lastIP},#{lastLoginTime})
 	</insert>
 	<update id="update" parameterType="indi.bwr.demo.blog.entity.LoginLog">
-		update login_log set id = #{id},user_id = #{userId},last_IP = #{lastIP},last_login_time= #{lastLoginTime} where id = #{id}
+		update login_log set user_id = #{userId},last_IP = #{lastIP},last_login_time= #{lastLoginTime} where id = #{id}
 	</update>
 	<delete id="deleteById" parameterType="long">
 		delete from login_log where id = #{id}

@@ -9,8 +9,7 @@
 		(#{id},#{uid},#{account},#{password},#{name},#{email},#{sex},#{birthday},#{avatarLocation},#{ersonalLocation},#{registerTime},#{isDelete}) 
 	</insert>
 	<update id="update" parameterType="indi.bwr.demo.blog.entity.User">
-		update user set 
-			id = #{id},
+		update user set
 			uid = #{uid},
 			account = #{account},
 			password = #{password},

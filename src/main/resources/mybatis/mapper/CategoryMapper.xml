@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indi.bwr.demo.blog.dao.CategoryDao">
+	<insert id="save" parameterType="indi.bwr.demo.blog.entity.Category">
+		insert into category(id,name,is_delete) values(#{id},#{name},#{isDelete})
+	</insert>
+	<update id="update" parameterType="indi.bwr.demo.blog.entity.Category">
+		update category set name = #{name},is_delete = #{isDelete} where id = #{id}
+	</update>
+	<delete id="deleteById" parameterType="long">
+		delete from category where id = #{id}
+	</delete>
+	<select id="findAll" resultType="indi.bwr.demo.blog.entity.Category">
+		select * from category
+	</select>
+	<select id="findById" parameterType="long"
+		resultType="indi.bwr.demo.blog.entity.Category">
+		select * from category where id = #{id}
+	</select>
+</mapper>

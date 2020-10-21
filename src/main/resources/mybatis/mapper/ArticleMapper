@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indi.bwr.demo.blog.dao.ArticleDao">
+	<insert id="save" parameterType="indi.bwr.demo.blog.entity.Article">
+		insert into article(id,user_id,title,content_location,category_id,reading_volume,create_time,last_change_time,is_delete) values(#{id},#{userId},#{title},#{contentLocation},#{categoryId},#{readingVolume},#{createTime},#{lastChangeTime},#{isDelete})
+	</insert>
+	<update id="update" parameterType="indi.bwr.demo.blog.entity.Article">
+		update article set user_id = #{userId} 
+		title = #{title}
+		content_location = #{contentLocation}
+		category_id = #{categoryId}
+		reading_volume = #{readingVolume}
+		create_time = #{createTime}
+		last_change_time = #{lastChangeTime}
+		is_delete = #{isDelete}
+		where id = #{id}
+	</update>
+	<delete id="deleteById" parameterType="long">
+		delete from article where id = #{id}
+	</delete>
+	<select id="findAll" resultType="indi.bwr.demo.blog.entity.Article">
+		select * from article
+	</select>
+	<select id="findById" parameterType="long"
+		resultType="indi.bwr.demo.blog.entity.Article">
+		select * from article where id = #{id}
+	</select>
+</mapper>
