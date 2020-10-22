@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indi.bwr.demo.blog.dao.ArticleReadLogDao">
+	<insert id="save" parameterType="indi.bwr.demo.blog.entity.ArticleReadLog">
+		insert into article_read_log(id,article_id,user_id,read_time) values(#{id},#{articleId},#{userId},#{readTime})
+	</insert>
+	<update id="update" parameterType="indi.bwr.demo.blog.entity.ArticleReadLog">
+		update article_read_log set article_id = #{articleId},user_id = #{userId},read_time = #{readTime} where id = #{id}
+	</update>
+	<delete id="deleteById" parameterType="long">
+		delete from article_read_log where id = #{id}
+	</delete>
+	<select id="findAll" resultType="indi.bwr.demo.blog.entity.ArticleReadLog">
+		select * from article_read_log
+	</select>
+	<select id="findById" parameterType="long"
+		resultType="indi.bwr.demo.blog.entity.ArticleReadLog">
+		select * from article_read_log where id = #{id}
+	</select>
+</mapper>

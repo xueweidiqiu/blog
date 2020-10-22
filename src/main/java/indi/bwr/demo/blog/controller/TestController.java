@@ -19,4 +19,10 @@ public class TestController {
 		return service.find(id).toString();
 	}
 	
+	@RequestMapping("/articleTest")
+	public String articleTest() {
+		service.articleTest();
+		return "³É¹¦";
+	}
+	
 }

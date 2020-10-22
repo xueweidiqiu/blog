@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indi.bwr.demo.blog.dao.CommentDao">
+	<insert id="save" parameterType="indi.bwr.demo.blog.entity.Comment">
+		insert into comment(id,article_id,user_id,content,is_delete,is_reply) values(#{id},#{artivleId},#{userId},#{content},#{isDelete},#{isReply})
+	</insert>
+	<update id="update" parameterType="indi.bwr.demo.blog.entity.Comment">
+		update comment set article_id = #{articleId},user_id = #{userId},content = #{content},is_delete = #{isDelete},is_reply = #{isReply} where id = #{id}
+	</update>
+	<delete id="deleteById" parameterType="long">
+		delete from comment where id = #{id}
+	</delete>
+	<select id="findAll" resultType="indi.bwr.demo.blog.entity.Comment">
+		select * from comment
+	</select>
+	<select id="findById" parameterType="long"
+		resultType="indi.bwr.demo.blog.entity.Comment">
+		select * from comment where id = #{id}
+	</select>
+</mapper>
