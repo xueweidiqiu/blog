@@ -21,14 +21,16 @@ public class TestService {
 		return dao.findById(id);
 	}
 	
-	public void articleTest() {
+	public Article articleTest() {
 		try {
 			//Article article = new Article(Long.valueOf(3L),Long.valueOf(2L),"111","123",Long.valueOf(5L),Integer.valueOf(12),null,null,false);
 			//articleDao.save(article);
 			Article article2 = articleDao.findById(3L);
 			System.out.println(article2);
+			return article2;
 		} catch(IllegalArgumentException e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 }
