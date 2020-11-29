@@ -1,6 +1,10 @@
 package indi.bwr.demo.blog.entity;
 
-import java.sql.Time;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +20,9 @@ public class Article {
 	private String contentLocation;
 	private Long categoryId;
 	private Integer readingVolume;
-	private Time createTime;
-	private Time lastChangeTime;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date createTime;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date lastChangeTime;
 	private boolean isDelete;
 }
