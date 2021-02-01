@@ -118,5 +118,6 @@
 				<version>${springbootstarters.version}</version>
 			</plugin>
 		</plugins>
+
 	</build>
 </project>
